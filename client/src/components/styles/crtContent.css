@@ -1,0 +1,28 @@
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  color: #ff0000;
+}
+.ui.list .list > .item a.header, .ui.list > .item a.header {
+  color: #ffffff !important;
+}
+
+.ui.list .list > .item a.header:hover, .ui.list > .item a.header:hover {
+  color: #ff0000 !important;
+}
+
+.ui.list .list > .item .header, .ui.list > .item .header {
+  color: #00ff00;
+}
+
+p {
+  color: #00ff00;
+}
+
+.ui.table, .ui.table thead th, .ui.table tr td {
+  color: #00ff00 !important;
+  background-color: #000000;
+  border: .5px solid #00ff00 !important;
+}

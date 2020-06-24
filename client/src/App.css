@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+html, body {
+  background-color: #313131 !important;
+  font-family: 'Share Tech Mono', monospace;
+}
+.header {
+  font-family: 'Share Tech Mono', monospace !important;
+}
+
+
+.bg {
+  position: fixed;
+}
+
+.ui.tabular.menu .item {
+  color: #FFFFFF;
+}
+
+.ui.tabular.menu .item:hover {
+  color: #FF0000;
+}
+
+.ui.vertical.tabular.menu .active.item {
+  background: #0ff;
+  border-color: #0ff;
+}
+
+.ui.vertical.tabular.menu {
+  border-right: 1px solid #00c8b5;
+}
+
+.ui.column.grid > [class*="twelve wide"].column, .ui.grid > .column.row > [class*="twelve wide"].column, .ui.grid > .row > [class*="twelve wide"].column, .ui.grid > [class*="twelve wide"].column {
+  width: 74% !important;
+}
+
+.ui.column.grid > [class*="four wide"].column, .ui.grid > .column.row > [class*="four wide"].column, .ui.grid > .row > [class*="four wide"].column, .ui.grid > [class*="four wide"].column {
+  width: 26% !important;
+}
+
+.ui.segment {
+  background-color: #101010;
+}
+
+.menu-left {
+  padding-right: 0rem !important;
+}
+
+.menu-right {
+  padding-left: 0rem !important;
+}
+
+.ui.segment {
+  border-radius: unset !important;
+  border-color: #0ff;
+  box-shadow: 0px 0px 4px 1px #0ff;
+}
+
+.chartjs-render-monitor {
+  height: 300px !important;
+}
+
+.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+  display: flex !important;
+}
+
+#root {
+}
+
+i.icon {
+  color: #ff00ff;
+}
+
+.ui.list .list > .item > .icon + .content, .ui.list .list > .item > .image + .content, .ui.list > .item > .icon + .content, .ui.list > .item > .image + .content {
+  color: #00ff00;
+}
+
+.ui.list .list > .item .description, .ui.list > .item .description {
+  color: #00ff00;
+}
+
+.ui.grid {
+  padding-top: 1rem;
+}
+
+.ui.vertical.tabular.menu {
+  background-color: #313131 !important;
+}
+
+.term-main {
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow-y: hidden;
+}

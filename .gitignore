@@ -1,0 +1,27 @@
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Env
+api/.env
+client/.env
+
+# Dependency directories
+client/node_modules/
+api/node_modules/
+client/package-lock.json
+api/package-lock.json
+
+# REACT
+client/.pnp
+client/.pnp.js
+
+# production
+client/build
