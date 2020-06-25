@@ -6,7 +6,7 @@ const Info = () => (
   <List>
     <List.Item>
       <List.Icon name='user' />
-      <List.Content>Troy Salem</List.Content>
+      <List.Content>Troy Salem (Cr0wn_Gh0ul)</List.Content>
     </List.Item>
     <List.Item>
       <List.Icon name='marker' />

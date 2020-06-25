@@ -10,7 +10,7 @@ html, body {
 
 
 .bg {
-  position: fixed;
+  position: absolute;
 }
 
 .ui.tabular.menu .item {
