@@ -10,14 +10,14 @@ pids
 *.pid.lock
 
 # Env
-api/.env
+server/.env
 client/.env
 
 # Dependency directories
 client/node_modules/
-api/node_modules/
+server/node_modules/
 client/package-lock.json
-api/package-lock.json
+server/package-lock.json
 
 # REACT
 client/.pnp
