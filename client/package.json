@@ -6,7 +6,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@walletconnect/web3-provider": "^1.0.11",
+    "axios": "^0.19.2",
     "cytoscape": "^3.2.19",
+    "http-proxy-middleware": "^1.0.4",
     "p5": "^1.0.0",
     "react": "^16.13.1",
     "react-cytoscapejs": "^1.2.1",
@@ -15,7 +18,9 @@
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
-    "web3": "^1.2.9"
+    "socket.io-client": "^2.3.0",
+    "web3": "^1.2.9",
+    "web3modal": "^1.7.0"
   },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
@@ -23,10 +28,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://127.0.0.1",
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://127.0.0.1:5000",
   "browserslist": {
     "production": [
       ">0.2%",

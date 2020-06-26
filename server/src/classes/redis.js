@@ -1,8 +1,8 @@
 const redis       = require('redis');
-const uuidv4      = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 const {promisify} = require('util');
 
-export default class RedisController {
+class RedisController {
   constructor(cfg) {
     this.keystore = redis.createClient({
         host: cfg.redis_host || 'localhost',
@@ -40,3 +40,5 @@ export default class RedisController {
     }
   }
 }
+
+module.exports = RedisController;

@@ -1,9 +1,9 @@
-const jwt = require('../classes/jwtManager/jwtManager.js');
+const ethUtil   = require('ethereumjs-util');
 
 module.exports = async(req,res) => {
   if (!req.body ||
       !req.body.signature ||
-      req.body.signature.indexOf('0x') != 0
+      req.body.signature.indexOf('0x') != 0 ||
       !req.body.token
   ) {
     return res.locals.response(req,res,400,{'error': 'Invalid Request.'},{})
@@ -12,7 +12,6 @@ module.exports = async(req,res) => {
   if (!payload) {
     return res.locals.response(req,res,401,{'error': 'Invalid Token.'},{})
   }
-
   let sigAddr;
   try {
     let bufferAddress   = ethUtil.toBuffer('0x' + Buffer.from(payload.msg).toString('hex'));
@@ -35,5 +34,5 @@ module.exports = async(req,res) => {
     return res.locals.response(req,res,500,{'error':'Internal Error.'},{});
   }
 
-  return res.locals.response(req,res,200,{},{'token': token});
+  return res.locals.response(req,res,200,{},{'token': newToken});
 }

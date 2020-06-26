@@ -1,11 +1,11 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-let express = require('express')
-    , app = express()
-    , http = require('http')
-    , server = http.createServer(app)
-let io = require('socket.io')(server, {
+let express          = require('express')
+    , express_server = express()
+    , http           = require('http')
+    , socket_server  = http.createServer(express_server)
+let io = require('socket.io')(socket_server, {
     path: '/socket',
     serveClient: false,
     pingInterval: 10000,
@@ -13,7 +13,8 @@ let io = require('socket.io')(server, {
     cookie: false
 });
 
-let port        = process.env.PORT ? process.env.PORT : 5000;
+let express_port    = process.env.EXPRESS_PORT ? process.env.EXPRESS_PORT : 5000;
+let socket_port     = process.env.SOCKET_PORT ? process.env.SOCKET_PORT : 8000;
 
 let jwt_priv    = process.env.JWT_PRIVATE_KEY ? process.env.JWT_PRIVATE_KEY.replace(/\\n/g, '\n') : false;
 let jwt_pub     = process.env.JWT_PUBLIC_KEY ? process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n') : false;
@@ -28,10 +29,11 @@ let redis_host  = process.env.REDIS_HOST ? process.env.REDIS_HOST : 'localhost';
 let redis_port  = process.env.REDIS_PORT ? process.env.REDIS_PORT : 6379;
 
 module.exports = {
-  app,
-  server,
+  express_server,
+  socket_server,
   io,
-  port,
+  express_port,
+  socket_port,
   jwt_priv,
   jwt_pub,
   jwt_opts,

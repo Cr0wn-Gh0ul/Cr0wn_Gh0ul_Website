@@ -6,6 +6,15 @@ class Web3Adapter {
     this.web3 = false;
   }
 
+  async connectProvider(provider) {
+    try {
+      this.web3 = new Web3(provider);
+    } catch(ex) {
+      return false;
+    }
+    return true;
+  }
+
   async connect() {
     if (!this.provider) { return false }
     try {

@@ -2,32 +2,33 @@
 const bodyParser    = require('body-parser');
 
 /* local */
-const eMiddleware   = require('./routes/middleware.js')
-const sMiddleware   = require('./socket/middleware.js')
+const Middleware    = require('./expressRoutes/middleware.js')
 const cfg           = require('./config/config.js');
 const eRoutes       = require('./expressRoutes/routes.js');
 const sRoutes       = require('./socketRoutes/routes.js');
+const JwtManager    = require('./classes/jwtManager.js');
+const jwt = new JwtManager(cfg);
 
 /* Configure Server */
-const server    = cfg.server;
+const socket_server     = cfg.socket_server;
+const express_server    = cfg.express_server
 const io        = cfg.io;
 const port      = cfg.port;
-const app       = cfg.app;
 
 /* Express Middleware */
-eMiddleware.corsMiddleware(app)
+Middleware.middleware(express_server)
 
 /* Api Routes */
 for (let endpoint in eRoutes) {
   if (eRoutes.hasOwnProperty(endpoint)) {
-    server.post(endpoint, eRoutes[endpoint]);
+    express_server.post('/api/' + endpoint, eRoutes[endpoint]);
   }
 }
 
 /* Socket Middleware */
 io.use((socket, next) => {
-  if (socket.handshake.query && socket.handshake.query.gameToken){
-    let verified = jwtManager.verify(socket.handshake.query.gameToken);
+  if (socket.handshake.query && socket.handshake.query.token){
+    let verified = jwt.verify(socket.handshake.query.token);
     if (!verified) {
       socket.emit('error', 'Bad Token');
       return;
@@ -35,20 +36,25 @@ io.use((socket, next) => {
     socket.payload = verified.payload;
     next();
   } else {
-    socket.emit('error', 'Missing Token');
+    try {
+      socket.emit('error', 'Missing Token');
+    } catch(ex) {
+      return
+    }
     return;
   }
-}
+});
 
 /* Socket Routes */
 io.on('connection', (socket) => {
   for (let endpoint in sRoutes) {
     if (sRoutes.hasOwnProperty(endpoint)) {
-      socket.on(endpoint, sRoutes[endpoint]);
+      socket.on(endpoint, (data) => { sRoutes[endpoint](data, socket) });
     }
   }
-}
+});
 
 /* Start Server */
-server.listen(cfg.PORT, () => console.log(`Api Ready! Port: ${cfg.PORT}!`));
+express_server.listen(cfg.express_port, () => console.log(`Api Ready! Port: ${cfg.express_port}!`));
+socket_server.listen(cfg.socket_port, () => console.log(`Socket Ready! Port: ${cfg.socket_port}!`))
 

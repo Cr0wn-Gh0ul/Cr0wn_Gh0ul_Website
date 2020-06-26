@@ -1,7 +1,7 @@
 // Require
 const jwt = require('jsonwebtoken');
 
-export default class jwtManager {
+class jwtManager {
   constructor(cfg) {
     this.publicKey = cfg.jwt_pub;
     this.privateKey = cfg.jwt_priv;
@@ -29,3 +29,5 @@ export default class jwtManager {
   }
 
 }
+
+module.exports = jwtManager;
