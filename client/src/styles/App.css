@@ -4,6 +4,11 @@ html, body {
   background-color: #313131 !important;
   font-family: 'Share Tech Mono', monospace;
 }
+
+.ui.header {
+  color: #ffffff;
+}
+
 .header {
   font-family: 'Share Tech Mono', monospace !important;
 }
@@ -92,3 +97,20 @@ i.icon {
   max-width: 100vw;
   overflow-y: hidden;
 }
+
+.ui.styled.accordion, .ui.styled.accordion .accordion {
+  background-color: unset !important;
+}
+
+.ui.styled.accordion .accordion .title, .ui.styled.accordion .title, .ui.styled.accordion .active.title {
+  color: #FFFFFF;
+}
+
+.ui.styled.accordion .title:hover {
+  color: #ff0000;
+}
+
+.ui.bulleted.list .list > .item, .ui.bulleted.list > .item, ul.ui.list li {
+  color: #00ff00;
+}
+

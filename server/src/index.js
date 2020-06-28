@@ -29,6 +29,7 @@ for (let endpoint in eRoutes) {
 io.use((socket, next) => {
   if (socket.handshake.query && socket.handshake.query.token){
     let verified = jwt.verify(socket.handshake.query.token);
+console.log(verified)
     if (!verified) {
       socket.emit('error', 'Bad Token');
       return;
@@ -39,7 +40,7 @@ io.use((socket, next) => {
     try {
       socket.emit('error', 'Missing Token');
     } catch(ex) {
-      return
+      return;
     }
     return;
   }

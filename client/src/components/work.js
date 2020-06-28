@@ -14,8 +14,8 @@ const WorkList = () => (
     <List.Item>
       <List.Icon name='linkify' size='large' verticalAlign='middle' />
       <List.Content>
-        <List.Header className="table-links" as='a' href="https://platform.blockade.games/">Blockchain Game Developer Platform</List.Header>
-        <List.Description>For mainstream game developers to build a scalable blockchain game using the tools they already know.</List.Description>
+        <List.Header className="table-links" as='a' href="https://github.com/BlockadeLabs">Blockade Labs</List.Header>
+        <List.Description>Blockade Games Open-Source Repositories.</List.Description>
       </List.Content>
     </List.Item>
     <List.Item>

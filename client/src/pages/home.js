@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Image, Grid, Menu, Segment } from 'semantic-ui-react'
+import { Header, Container, Image, Icon, Grid, Menu, Segment } from 'semantic-ui-react'
 import Cr0wn from '../images/Cr0wn_Gh0ul.png';
 
 import Info from '../components/info.js';
 import Work from '../components/work.js';
 import Archive from '../components/archive.js';
-
-import Test from '../components/test.js';
+import Skills from '../components/skills.js';
 
 const p5 = require('p5');
 
@@ -79,6 +78,8 @@ export default class Main extends Component {
           return (<Work/>);
         case 'archive':
           return (<Archive/>);
+        case 'skills':
+          return (<Skills/>);
         default:
           return (<></>);
       }
@@ -109,6 +110,11 @@ export default class Main extends Component {
                 onClick={this.handleItemClick}
               />
               <Menu.Item
+                name='Skills'
+                active={activeItem === 'skills'}
+                onClick={this.handleItemClick}
+              />
+              <Menu.Item
                 name='Archive'
                 active={activeItem === 'archive'}
                 onClick={this.handleItemClick}
@@ -121,11 +127,15 @@ export default class Main extends Component {
               {this.menuRender(this.state.activeItem)}
             </Segment>
           </Grid.Column>
-        </Grid>
-        <Grid>
-          <Grid.Row centered columns={1}>
-            <Grid.Column md={6}>
-<Test/>
+          <Grid.Row centered columns={2}>
+            <Grid.Column>
+              <Container textAlign="center" className="">
+                <Header as='h2'>Online Tools</Header>
+                <Icon size="big" name="warning"/>
+                <p>
+                Coming Soon...
+                </p>
+              </Container>
             </Grid.Column>
           </Grid.Row>
         </Grid>
