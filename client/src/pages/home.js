@@ -121,23 +121,6 @@ export default class Main extends Component {
               />
             </Menu>
           </Grid.Column>
-
-          <Grid.Column stretched width={12} className="menu-right">
-            <Segment className="crt">
-              {this.menuRender(this.state.activeItem)}
-            </Segment>
-          </Grid.Column>
-          <Grid.Row centered columns={2}>
-            <Grid.Column>
-              <Container textAlign="center" className="">
-                <Header as='h2'>Online Tools</Header>
-                <Icon size="big" name="warning"/>
-                <p>
-                Coming Soon...
-                </p>
-              </Container>
-            </Grid.Column>
-          </Grid.Row>
         </Grid>
       </>
     )
