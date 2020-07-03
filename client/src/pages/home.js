@@ -121,6 +121,11 @@ export default class Main extends Component {
               />
             </Menu>
           </Grid.Column>
+          <Grid.Column stretched width={12} className="menu-right">
+            <Segment className="crt">
+              {this.menuRender(this.state.activeItem)}
+            </Segment>
+          </Grid.Column>
         </Grid>
       </>
     )
