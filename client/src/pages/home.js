@@ -6,6 +6,7 @@ import Info from '../components/info.js';
 import Work from '../components/work.js';
 import Archive from '../components/archive.js';
 import Skills from '../components/skills.js';
+import Chat from '../components/chat.js';
 
 const p5 = require('p5');
 
@@ -90,6 +91,7 @@ export default class Main extends Component {
 
     return (
       <>
+      <Chat/>
       <div className="bg crt" ref={this.c64}></div>
       <Grid>
         <Grid.Row className="" verticalAlign='middle' columns={1}>

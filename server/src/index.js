@@ -27,18 +27,21 @@ for (let endpoint in eRoutes) {
 
 /* Socket Middleware */
 io.use((socket, next) => {
-  if (socket.handshake.query && socket.handshake.query.token){
+  if (socket.handshake.query && socket.handshake.query.token) {
     let verified = jwt.verify(socket.handshake.query.token);
-console.log(verified)
     if (!verified) {
-      socket.emit('error', 'Bad Token');
-      return;
+      try {
+        socket.emit('err', 'Bad Token');
+        return;
+      } catch(ex) {
+        console.log(ex)
+      }
     }
     socket.payload = verified.payload;
     next();
   } else {
     try {
-      socket.emit('error', 'Missing Token');
+      socket.emit('err', 'Missing Token');
     } catch(ex) {
       return;
     }

@@ -1,3 +1,4 @@
 module.exports = {
-    test: require('./test.js')
+    messenger   : require('./messenger.js'),
+    test        : require('./test.js')
 }
