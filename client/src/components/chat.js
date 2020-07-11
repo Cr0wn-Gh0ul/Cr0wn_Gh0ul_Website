@@ -17,7 +17,8 @@ function Chat() {
         return false;
     }
     let Socket = new SocketManager();
-    await Socket.start("messenger", getToken.data.token);
+    await Socket.start(getToken.data.token);
+
     socket = Socket.socket;
     connected = Socket.connected;
     await socketRecv();
@@ -32,7 +33,8 @@ function Chat() {
   }
 
   const send = (msg) => {
-    socket.emit('messager', msg);
+console.log(socket)
+    socket.emit('messenger', msg);
   }
 
   useEffect(async() => {

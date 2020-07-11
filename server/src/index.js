@@ -9,11 +9,11 @@ const sRoutes       = require('./socketRoutes/routes.js');
 const JwtManager    = require('./classes/jwtManager.js');
 const jwt = new JwtManager(cfg);
 
-/* Configure Server */
+/* Configure Servers */
 const socket_server     = cfg.socket_server;
 const express_server    = cfg.express_server
-const io        = cfg.io;
-const port      = cfg.port;
+const io                = cfg.io;
+const port              = cfg.port;
 
 /* Express Middleware */
 Middleware.middleware(express_server)
@@ -56,6 +56,12 @@ io.on('connection', (socket) => {
       socket.on(endpoint, (data) => { sRoutes[endpoint](data, socket) });
     }
   }
+});
+
+/* Discord */
+cfg.discordClient.on('message', async(message) {
+   if (message.author.id != '410291034166132736') { return false }
+
 });
 
 /* Start Server */

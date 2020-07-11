@@ -1,6 +1,10 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const { Client } = require('discord.js');
+const discordClient = new Client();
+discordClient.login(process.env.DISCORD_BOT_KEY);
+
 let express          = require('express')
     , express_server = express()
     , http           = require('http')
@@ -12,6 +16,7 @@ let io = require('socket.io')(socket_server, {
     pingTimeout: 5000,
     cookie: false
 });
+
 
 let express_port    = process.env.EXPRESS_PORT ? process.env.EXPRESS_PORT : 5000;
 let socket_port     = process.env.SOCKET_PORT ? process.env.SOCKET_PORT : 8000;
@@ -29,6 +34,7 @@ let redis_host  = process.env.REDIS_HOST ? process.env.REDIS_HOST : 'localhost';
 let redis_port  = process.env.REDIS_PORT ? process.env.REDIS_PORT : 6379;
 
 module.exports = {
+  discordClient,
   express_server,
   socket_server,
   io,
