@@ -5,6 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
+    "api": "node src/startScripts/api.js",
+    "socket": "node src/startScripts/socket.js",
+    "discord": "node src/startScripts/discord.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

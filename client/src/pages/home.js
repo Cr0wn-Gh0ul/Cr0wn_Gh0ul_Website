@@ -128,9 +128,10 @@ export default class Main extends Component {
               {this.menuRender(this.state.activeItem)}
             </Segment>
           </Grid.Column>
+          <Grid.Row centered>
+          </Grid.Row>
         </Grid>
       </>
     )
   }
 }
-

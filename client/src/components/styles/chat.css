@@ -1,0 +1,79 @@
+.rcw-messages-container {
+  background-color: #000000 !important;
+}
+
+.rcw-conversation-container .rcw-header {
+  background-color: #df00ff !important;
+  color: #fff;
+  border: solid 1px;
+}
+
+.launcher {
+  animation-duration: .5s;
+  animation-name: d;
+  animation-fill-mode: forwards;
+  align-self: flex-end;
+  background-color: #35cce6;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 1px #b5b5b5;
+  height: 60px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 60px;
+}
+
+.ui.button, .ui.buttons .button, .ui.buttons .or {
+  font-size: 3rem;
+}
+
+.ui.button > .icon:not(.button) {
+  margin: -1px 2.429em 2px -0.454em !important;
+}
+
+.ui.button {
+  line-height: 0rem !important;
+  background: #0ff none !important;
+}
+
+.ui.circular.button > .icon {
+  width: 0em !important;
+}
+
+rcw-client .rcw-message-text {
+    background-color: #0ff !important;
+}
+
+p {
+  color: #f00 !important;
+}
+
+body {
+  color: #000 !important;
+}
+
+.rcw-client .rcw-message-text {
+  background-color: #0f0 !important;
+}
+
+.rcw-response .rcw-message-text {
+  background-color: #0ff !important;
+}
+
+.rcw-timestamp {
+  color: #fff !important;
+}
+
+.rcw-badge {
+  position: fixed;
+  top: -10px;
+  right: -5px;
+  background-color: red;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 50%;
+  font-size: 1rem;
+}

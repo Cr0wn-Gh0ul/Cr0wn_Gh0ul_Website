@@ -1,13 +1,15 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Widget, addResponseMessage, addLinkSnippet, addUserMessage } from 'react-chat-widget';
+import React, { useState, useEffect } from 'react';
+import { Widget, addResponseMessage } from 'react-chat-widget';
+import { Button } from 'semantic-ui-react'
 
 import 'react-chat-widget/lib/styles.css';
+import './styles/chat.css';
 
 import SocketManager from '../classes/socket.js';
 import Api from '../classes/api.js';
 
 function Chat() {
-  let [socket, connected] = useState(false);
+  let [socket] = useState(false);
 
   const initSocket = async(token) => {
     let api = new Api();
@@ -20,7 +22,6 @@ function Chat() {
     await Socket.start(getToken.data.token);
 
     socket = Socket.socket;
-    connected = Socket.connected;
     await socketRecv();
   }
 
@@ -29,23 +30,29 @@ function Chat() {
   }
 
   const recv = (data) => {
-    console.log(data)
+    addResponseMessage(data)
   }
 
   const send = (msg) => {
-console.log(socket)
     socket.emit('messenger', msg);
   }
 
-  useEffect(async() => {
-    await initSocket();
+  const customLauncher = (handleToggle) =>
+    (<>
+      <Button side="medium" className="launcher" circular icon="discord" onClick={handleToggle}></Button>
+    </>)
+
+  useEffect(() => {
+    async function startSocket() {
+      await initSocket();
+    }
+    startSocket();
   }, []);
 
   const handleNewUserMessage = (newMessage) => {
     if (!socket) {
       addResponseMessage('Chat is currently unavailable!');
     }
-    console.log(`New message incoming! ${newMessage}`);
     send(newMessage);
   };
 
@@ -54,6 +61,7 @@ console.log(socket)
       handleNewUserMessage={handleNewUserMessage}
       title="Live Chat"
       subtitle="Chat <=> Discord"
+      launcher={handleToggle => customLauncher(handleToggle)}
     />
   );
 }
