@@ -49,8 +49,8 @@ io.use((socket, next) => {
 
 /* Socket Routes */
 io.on('connect', (socket) => {
-  sRoutes['newConnection'](socket);
-  socket.on('disconnect', () => { sRoutes['disconnected'](socket) });
+//  sRoutes['newConnection'](socket);
+//  socket.on('disconnect', () => { sRoutes['disconnected'](socket) });
   for (let endpoint in sRoutes) {
     if (sRoutes.hasOwnProperty(endpoint)) {
       socket.on(endpoint, (data) => { sRoutes[endpoint](data, socket) });

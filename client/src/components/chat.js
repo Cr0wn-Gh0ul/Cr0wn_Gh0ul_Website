@@ -15,7 +15,7 @@ function Chat() {
     let api = new Api();
     let getToken = await api.request('messenger-token');
     if (!getToken || getToken.status !== 200 || !getToken.data || !getToken.data.token) {
-        addResponseMessage('Oops! An unexpected error occurred');
+        addResponseMessage('Oops! An unexpected error occurred.', 'connectionMsg');
         return false;
     }
     let Socket = new SocketManager();
@@ -37,6 +37,9 @@ function Chat() {
     socket.emit('messenger', msg);
   }
 
+  const toggler = (e) => {
+    console.log('hit')
+  }
   const customLauncher = (handleToggle) =>
     (<>
       <Button side="medium" className="launcher" circular icon="discord" onClick={handleToggle}></Button>
@@ -51,7 +54,7 @@ function Chat() {
 
   const handleNewUserMessage = (newMessage) => {
     if (!socket) {
-      addResponseMessage('Chat is currently unavailable!');
+      addResponseMessage('Chat is currently unavailable!', 'connectionMsg');
     }
     send(newMessage);
   };
@@ -62,6 +65,7 @@ function Chat() {
       title="Live Chat"
       subtitle="Chat <=> Discord"
       launcher={handleToggle => customLauncher(handleToggle)}
+      launcherOpenLabel='chat-active'
     />
   );
 }

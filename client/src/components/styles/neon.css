@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+
+.neonH1 {
+  padding-top: 10px;
+  font-size: 3rem !important;
+}
+
+.neonH1, .neonP {
+  font-size: 2rem;
+  line-height: 2rem;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #00ffe7 !important;
+    font-family: 'Roboto Mono', monospace;
+
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+  padding-bottom: 5px;
+}
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+  text-shadow: 0 0 5px #00c3ff, 0 0 15px #00c3ff, 0 0 20px #00c3ff, 0 0 40px #00c3ff, 0 0 60px #0085ae, 0 0 10px #006d8e, 0 0 98px #01607d;
+    color: #00c3ff;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+  text-shadow: 0 0 5px #00c3ff, 0 0 15px #00c3ff, 0 0 20px #00c3ff, 0 0 40px #00c3ff, 0 0 60px #0085ae, 0 0 10px #006d8e, 0 0 98px #01607d;
+    color: #00c3ff;
+  }
+}
+
+.sign {
+  padding-top: 20px !important;
+  border: 1px solid aqua;
+  background-color: #000;
+}
