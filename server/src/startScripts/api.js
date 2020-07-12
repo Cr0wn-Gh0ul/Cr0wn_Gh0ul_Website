@@ -1,7 +1,7 @@
 /* local */
-const express_middleware    = require('./expressRoutes/middleware.js')
-const cfg                   = require('./config/config.js');
-const eRoutes               = require('./expressRoutes/routes.js');
+const express_middleware    = require('../expressRoutes/middleware.js')
+const cfg                   = require('../config/config.js');
+const eRoutes               = require('../expressRoutes/routes.js');
 
 /* Configure Servers */
 const express_server    = cfg.express_server

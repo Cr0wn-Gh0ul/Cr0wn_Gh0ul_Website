@@ -1,7 +1,7 @@
 /* local */
-const cfg           = require('./config/config.js');
-const sRoutes       = require('./socketRoutes/routes.js');
-const JwtManager    = require('./classes/jwtManager.js');
+const cfg           = require('../config/config.js');
+const sRoutes       = require('../socketRoutes/routes.js');
+const JwtManager    = require('../classes/jwtManager.js');
 const jwt           = new JwtManager(cfg);
 
 /* Configure Servers */
