@@ -83,7 +83,6 @@ export default class Main extends Component {
           </Grid.Column>
           <Grid.Row centered columns={1}>
             <Grid.Column>
-              <EthMonitor/>
             </Grid.Column>
           </Grid.Row>
         </Grid>

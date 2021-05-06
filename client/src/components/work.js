@@ -7,6 +7,20 @@ const WorkList = () => (
     <List.Item>
       <List.Icon name='linkify' size='large' verticalAlign='middle' />
       <List.Content>
+        <List.Header className="table-links" as='a' href="https://www.madnetwork.com/">Mad Network</List.Header>
+        <List.Description>Blockchain for authentication infrastructure.</List.Description>
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <List.Icon name='linkify' size='large' verticalAlign='middle' />
+      <List.Content>
+        <List.Header className="table-links" as='a' href="https://coinartist.io/">CoinArtist.io</List.Header>
+        <List.Description>Social token for coin_artist with defi incentives.</List.Description>
+      </List.Content>
+    </List.Item>
+    <List.Item>
+      <List.Icon name='linkify' size='large' verticalAlign='middle' />
+      <List.Content>
         <List.Header className="table-links" as='a' href="https://mule.wtf/">Mule.WTF</List.Header>
         <List.Description>Ethereum gamified wallet + Discord / Telegram bot interfaces.</List.Description>
       </List.Content>

@@ -21,7 +21,7 @@ const Info = () => (
     <List.Item>
       <List.Icon name='linkedin' />
       <List.Content>
-        <a href='www.linkedin.com/in/troysalem'>LinkedIn</a>
+        <a href='https://www.linkedin.com/in/troysalem'>LinkedIn</a>
       </List.Content>
     </List.Item>
     <List.Item>

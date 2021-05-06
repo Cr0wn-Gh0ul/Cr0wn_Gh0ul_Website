@@ -28,6 +28,8 @@ export default class Skills extends Component {
         <Accordion.Content active={activeIndex === 0}>
           <List bulleted>
             <List.Item>Javascript</List.Item>
+            <List.Item>Golang</List.Item>
+            <List.Item>Solidity</List.Item>
             <List.Item>C / C++</List.Item>
             <List.Item>Bash</List.Item>
             <List.Item>SQL</List.Item>
@@ -50,12 +52,13 @@ export default class Skills extends Component {
           <List bulleted>
             <List.Item>AWS</List.Item>
             <List.Item>Google Cloud</List.Item>
+            <List.Item>Ansible</List.Item>
+            <List.Item>Terraform</List.Item>
             <List.Item>Digital Ocean</List.Item>
             <List.Item>Nginx</List.Item>
             <List.Item>Apache</List.Item>
-            <List.Item>Express</List.Item>
+            <List.Item>Express.js</List.Item>
             <List.Item>Docker</List.Item>
-            <List.Item>Git</List.Item>
         </List>
         </Accordion.Content>
 
@@ -71,6 +74,7 @@ export default class Skills extends Component {
           <List bulleted>
             <List.Item>Node.js</List.Item>
             <List.Item>React</List.Item>
+            <List.Item>Electron</List.Item>
             <List.Item>Semantic-UI</List.Item>
             <List.Item>Wordpress</List.Item>
             <List.Item>Bootstrap</List.Item>
@@ -93,7 +97,9 @@ export default class Skills extends Component {
           <List bulleted>
             <List.Item>Jira</List.Item>
             <List.Item>Trello</List.Item>
+            <List.Item>Git</List.Item>
             <List.Item>VirtualBox</List.Item>
+            <List.Item>VMWare</List.Item>
             <List.Item>VNC</List.Item>
             <List.Item>VPN</List.Item>
             <List.Item>Postman</List.Item>
