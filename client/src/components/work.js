@@ -4,6 +4,13 @@ import './styles/crtContent.css';
 
 const WorkList = () => (
   <List divided relaxed>
+        <List.Item>
+      <List.Icon name='linkify' size='large' verticalAlign='middle' />
+      <List.Content>
+        <List.Header className="table-links" as='a' href="https://opensea.io/collection/lofiskylines">LoFi Skylines</List.Header>
+        <List.Description>Solo Animated Deterministic Generative NFTs</List.Description>
+      </List.Content>
+    </List.Item>
     <List.Item>
       <List.Icon name='linkify' size='large' verticalAlign='middle' />
       <List.Content>

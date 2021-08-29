@@ -19,6 +19,12 @@ const Info = () => (
       </List.Content>
     </List.Item>
     <List.Item>
+      <List.Icon name='discord' />
+      <List.Content>
+        <a href='https://discord.gg/q2dr5fyZBy'>Discord</a>
+      </List.Content>
+    </List.Item>
+    <List.Item>
       <List.Icon name='linkedin' />
       <List.Content>
         <a href='https://www.linkedin.com/in/troysalem'>LinkedIn</a>

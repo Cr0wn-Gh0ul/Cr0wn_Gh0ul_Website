@@ -7,9 +7,9 @@ import Work from '../components/work.js';
 import Archive from '../components/archive.js';
 import Skills from '../components/skills.js';
 
-import Chat from '../components/chat.js';
+//import Chat from '../components/chat.js';
 import C64 from '../components/c64.js';
-import EthMonitor from '../components/ethMonitor.js';
+//import EthMonitor from '../components/ethMonitor.js';
 
 export default class Main extends Component {
   constructor(props) {
@@ -44,7 +44,11 @@ export default class Main extends Component {
 
     return (
       <>
-      <Chat/>
+      {
+        /*
+        <Chat/>
+        */
+      }
         <C64/>
       <Grid>
         <Grid.Row className="" verticalAlign='middle' columns={1}>
